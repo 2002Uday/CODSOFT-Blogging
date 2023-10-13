@@ -1,0 +1,23 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem 5rem;
+    padding: 1.5rem 0rem;
+}
+
+.Header a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.logo{
+    font-weight: bolder;
+}
+
+.log{
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+}

@@ -18,6 +18,7 @@ const secret = 'maf9jsk38fnacemdj8fyfbvjsja9xcnwj263hlkdywioc77zwgs6ywvxj'
 app.use(cors({credentials:true, origin:'http://localhost:3000'}));
 app.use(express.json());
 app.use(cookieParser());
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 mongoose.connect(
   // "mongodb+srv://udaybharadwa:Uday1234@cluster0.wth1vas.mongodb.net/?retryWrites=true&w=majority"
@@ -104,6 +105,18 @@ app.post('/login', async (req,res) => {
       res.json(postDoc);
     });
   
+  });
+
+
+  // Fetch Blog Data from DataBase
+
+  app.get('/post', async (req,res) => {
+    res.json(
+      await Post.find()
+        .populate('author', ['username'])
+        .sort({createdAt: -1})
+        .limit(20)
+    );
   });
   
 

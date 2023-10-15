@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {Navigate} from 'react-router-dom'
 import "./Login.css"
+import { UserContext } from '../../UserContext';
 
 const Login = () => {
   const [username,setUsername] = useState('');
   const [password,setPassword] = useState('');
   const [redirect,setRedirect] = useState(false);
-  // const {setUserInfo} = useContext(UserContext);
+  const {setUserInfo} = useContext(UserContext);
 
   async function login(ev) {
     ev.preventDefault();
@@ -18,7 +19,7 @@ const Login = () => {
     });
     if (response.ok) {
       response.json().then(userInfo => {
-        // setUserInfo(userInfo);
+        setUserInfo(userInfo);
         setRedirect(true);
       });
     } else {
@@ -41,7 +42,7 @@ const Login = () => {
                     placeholder='Password'
                     value={password}
                     onChange={ev => setPassword(ev.target.value)}/>
-            <button>Login</button>
+            <button className='login-btn'>Login</button>
         </form>
     </div>
   )

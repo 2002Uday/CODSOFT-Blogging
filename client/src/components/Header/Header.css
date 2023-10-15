@@ -1,0 +1,55 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem 5rem;
+    padding: 1.5rem 0rem;
+}
+
+.Header a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.701);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.logo{
+    font-weight: bolder;
+}
+
+.log{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+}
+
+span{
+    font-weight: 800;
+}
+
+.head-btn{
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 64, 255, 0.232);
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0rem 0rem 0.3rem 0rem rgba(128, 128, 128, 0.712);
+}
+
+.head-btn:hover{
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.02);
+    box-shadow: 0rem 0rem 0.5rem 0rem rgba(128, 128, 128, 0.712);
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

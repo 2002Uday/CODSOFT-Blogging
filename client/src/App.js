@@ -1,14 +1,15 @@
 import './App.css';
 import {BrowserRouter as Router, Route , Routes } from "react-router-dom"
-import Header from "./Header/Header";
-import Home from "./Home/Home";
-import Login from "./Authentication/Login"
-import Register from "./Authentication/Register"
-
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import Login from "./components/Authentication/Login"
+import Register from "./components/Authentication/Register"
+import {UserContextProvider} from "./UserContext";
 
 function App() {
   return (
     <Router> 
+      <UserContextProvider>
       <Header/>
       <Routes>
         <Route extact path="/" Component={Home}/>
@@ -16,6 +17,7 @@ function App() {
         <Route extact path="/register" Component={Register}/>
 
       </Routes>
+      </UserContextProvider>
     </Router>
   );
 }

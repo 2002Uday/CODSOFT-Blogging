@@ -6,6 +6,11 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const multer = require('multer');
+const uploadMiddleware = multer({ dest: 'uploads/' });
+const fs = require('fs');
+const Post = require("./models/Post");
+
 
 const salt = bcrypt.genSaltSync(10);
 const secret = 'maf9jsk38fnacemdj8fyfbvjsja9xcnwj263hlkdywioc77zwgs6ywvxj'
@@ -76,6 +81,30 @@ app.post('/login', async (req,res) => {
   });
 
 
+  // Create New Post 
+
+  app.post('/post', uploadMiddleware.single('file'), async (req,res) => {
+    const {originalname,path} = req.file;
+    const parts = originalname.split('.');
+    const ext = parts[parts.length - 1];
+    const newPath = path+'.'+ext;
+    fs.renameSync(path, newPath);
+  
+    const {token} = req.cookies;
+    jwt.verify(token, secret, {}, async (err,info) => {
+      if (err) throw err;
+      const {title,summary,content} = req.body;
+      const postDoc = await Post.create({
+        title,
+        summary,
+        content,
+        cover:newPath,
+        author:info.id,
+      });
+      res.json(postDoc);
+    });
+  
+  });
   
 
 app.listen(4000);

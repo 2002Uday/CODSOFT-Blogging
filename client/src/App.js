@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Authentication/Login"
 import Register from "./components/Authentication/Register"
+import CreatePost from "./components/Home/CreatePost.js"
 import {UserContextProvider} from "./UserContext";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route extact path="/" Component={Home}/>
         <Route extact path="/login" Component={Login}/>
         <Route extact path="/register" Component={Register}/>
+        <Route extact path="/create" Component={CreatePost}/>
 
       </Routes>
       </UserContextProvider>

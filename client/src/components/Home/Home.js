@@ -1,14 +1,14 @@
 import React from 'react'
-import Post from "./Post.js"
+import Blog from "./Blog.js"
 import "./Home.css"
 
 const Home = () => {
   return (
     <div className='home'>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <Blog />
+        <Blog />
+        <Blog />
+        <Blog />
     </div>
   )
 }

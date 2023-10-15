@@ -1,8 +1,7 @@
 import React from 'react'
-import "./post.css"
+import "./Blog.css"
 
-
-const Post = () => {
+const Blog = () => {
   return (
     <div className='post'>
         <img src='https://images.newscientist.com/wp-content/uploads/2023/10/12155944/SEI_175538505.jpg' alt='blog'/>    
@@ -19,4 +18,4 @@ const Post = () => {
   )
 }
 
-export default Post
+export default Blog

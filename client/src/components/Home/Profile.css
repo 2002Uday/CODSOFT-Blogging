@@ -1,0 +1,30 @@
+.profile-page{
+    padding: 1vmax 10vmax;
+}
+
+.username{
+    font-size: 5rem;
+}
+
+
+@media screen and (max-width: 768px){
+    .profile-page{
+        padding: 1vmax 5vmax;
+    }
+    .username{
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 426px){
+    .profile-page{
+        padding: 1vmax 2vmax;
+    }
+    .username{
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 320px){
+    .username{
+        font-size: 2rem;
+    }
+}

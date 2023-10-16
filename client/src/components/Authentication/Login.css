@@ -33,3 +33,11 @@ input{
     font-weight: bold;
     background-image: linear-gradient(to right,rgb(0, 213, 255),rgb(225, 0, 255));
 }
+
+
+@media screen and (max-width: 768px){
+    .login-form{
+        width: 80%;
+        padding: 3rem;
+    }
+}

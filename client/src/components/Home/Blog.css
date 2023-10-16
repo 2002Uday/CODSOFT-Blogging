@@ -6,6 +6,7 @@
     border-radius: 1rem;
     margin: 2rem 0rem;
     cursor: pointer;
+    align-items: center;
 }
 
 .post:hover{
@@ -14,21 +15,30 @@
     box-shadow: 0rem 0rem 1rem 0rem rgba(128, 128, 128, 0.993);
 }
 
+.post > a{
+    width: 30vmax;
+    height: 20vmax;
+}
+
 .post img{
-    width: 30%;
+    width: 100%;
+    height: 100%;
     border-radius: 1rem;
 }
 
 
 .text{
+    width: 60%;
     margin-left: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: rgb(57, 57, 57);
 }
 
 .text h1{
     margin: 0%;
+    color: rgb(57, 57, 57);
     font-size: 2.5rem;
 }
 
@@ -48,4 +58,60 @@
 
 .summry{
     line-height: 1.5rem;
+}
+
+
+@media screen and (max-width: 768px){
+    .post{
+        flex-direction: column;
+        margin: 1rem 0rem;
+
+    }
+    .post > a {
+        width: 50vmax;
+        height: 40vmax;
+    }
+    .text {
+        width: 100%;
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: rgb(57, 57, 57);
+    }
+    .text h1 {
+        margin: 1rem 0rem;
+        color: rgb(57, 57, 57);
+        font-size: 1.5rem;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+    .post{
+        flex-direction: column;
+        padding: 1rem 1rem;
+    }
+    .post > a {
+        width: 40vmax;
+        height: 20vmax;
+    }
+    .text {
+        width: 100%;
+        margin: 0px;
+    }
+    .text h1 {
+        margin: 1rem 0rem;
+        color: rgb(57, 57, 57);
+        font-size: 1rem;
+    }
+    .info {
+        font-size: 0.6rem;
+        margin: 0.1rem 0rem;
+    }
+    .summry {
+        line-height: 1rem;
+        font-size: 0.8rem;
+        margin: 0px;
+    }
 }

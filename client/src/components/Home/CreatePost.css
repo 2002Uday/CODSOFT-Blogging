@@ -32,3 +32,33 @@
     cursor: pointer;
     font-weight: bold;
 }
+
+
+
+@media screen and (max-width: 435px){   
+    .create-blog {
+        padding: 2rem;
+    }
+    .blog-form {
+        padding: 1rem 2rem;
+    }
+    .blog-form input {
+        border-radius: 0.1rem;
+        margin-bottom: 0.5rem;
+    }
+    .blog-form p{
+        font-weight: 700;
+        font-size: 1rem;
+        margin: 5px;
+    }
+
+}
+
+@media screen and (max-width: 376px){   
+    .create-blog {
+        padding: 1rem;
+    }
+    .blog-form {
+        padding: 1rem;
+    }
+}

@@ -5,6 +5,12 @@
     padding: 1.5rem 0rem;
 }
 
+.Mobile-Header{
+    display:none;
+}
+
+
+
 .Header a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.701);
@@ -52,4 +58,53 @@ span{
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+@media screen and (max-width: 768px){
+    .Header{
+        display: none;
+    }    
+    .Mobile-Header{
+        display: flex;
+        justify-content: space-between;
+        margin: 0rem 5rem;
+        padding: 1.5rem 0rem;
+    }
+    .logo{
+        font-size: 3vmax;
+        font-weight: bolder;
+    }
+    .menu{
+        width: 90%;
+        background-color: #383838;
+        padding: 3rem 5rem;
+        position: absolute;
+        top: 5rem;
+        left: 2.5rem;
+        border-radius: 1rem;
+    }
+    .log {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: white;
+    }
+    .head-btn{
+        background-color: rgba(255, 255, 255, 0.944);
+    }
+
+}
+
+@media screen and (max-width: 435px){   
+    .Mobile-Header{
+        margin: 0rem 2rem;
+    }
+    .menu{
+        width: 95%;
+        padding: 3rem 2rem;
+        position: absolute;
+        left: 0.6rem;
+        border-radius: 1rem;
+    }
 }

@@ -118,6 +118,24 @@ app.post('/login', async (req,res) => {
         .limit(20)
     );
   });
+
+
+  // Get Blog Details
+
+  app.get('/post/:id', async (req, res) => {
+    const {id} = req.params;
+    const postDoc = await Post.findById(id).populate('author', ['username']);
+    res.json(postDoc);
+  }) 
+
+  // Get single User
+
+  app.get('/user/:id', async (req, res) => {
+    const {id} = req.params;
+    const userDoc = await User.findById(id);
+    res.json(userDoc);
+  }) 
+
   
 
 app.listen(4000);
